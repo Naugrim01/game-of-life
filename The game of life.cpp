@@ -2,10 +2,52 @@
 //
 
 #include <iostream>
+#include <Windows.h>
+#include <time.h>
+#include <iomanip>
+
+void fill_array(int t[30][90], int x, int y);
+void show_array(int t[30][90], int x, int y);
+
+int field[30][90];
 
 int main()
 {
-    std::cout << "Hello World!\n";
+
+    fill_array(field, 30, 90);
+    show_array(field, 30, 90);
+}
+
+void fill_array(int t[30][90], int x, int y)
+{
+    srand(time(nullptr));
+    for (int i = 0; i < x; i++) 
+    {
+        for (int j = 0; j < y; j++) 
+        {
+            t[i][j] = rand() % 20;
+        }
+    }
+
+}
+
+void show_array(int t[30][90], int x, int y)
+{
+    for (int i = 0; i < x; i++)
+    {
+        for (int j = 0; j < y; j++)
+        {
+            if(t[i][j]!=0)
+                std::cout << ' ';
+            else
+                std::cout << 0;
+
+
+        }
+        std::cout << '\n';
+
+    }
+    
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
