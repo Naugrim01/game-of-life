@@ -8,14 +8,14 @@
 
 void fill_array(bool t[30][90], int x, int y, int a);
 void show_array(bool t[30][90], int x, int y);
-//void life_step(bool t[30][90], int x, int y);
+void life_step(bool t[30][90], int x, int y);
 
 bool field[30][90];
 int a = 5;
 
 int main()
 {
-    char decide;
+    //char decide;
     std::cout << "how much life? 0-100%\n";
     std::cin >> a;
     system("cls");
@@ -23,6 +23,14 @@ int main()
     show_array(field, 30, 90);
     system("pause");
     system("cls");
+
+    for (;;)
+    {
+        life_step(field, 30, 90);
+        show_array(field, 30, 90);
+        system("pause");
+        system("cls");
+    }
 }
 
 void fill_array(bool t[30][90], int x, int y, int a)
@@ -59,23 +67,38 @@ void show_array(bool t[30][90], int x, int y)
     }
     
 }
-/*
+
 void life_step(bool t[30][90], int x, int y)
 {
     bool t2[30][90];
-
+    int sum;
     for (int i = 0; i < x; i++)
     {
         for (int j = 0; j < y; j++)
         {
-            if ((rand() % 100) <= a)
-                t[i][j] = true;
-            else
-                t[i][j] = false;
+            if (i != 0 && i != x - 1 && j != 0 && j != y - 1)
+            {
+                sum = 0;
+                sum = t[i - 1][j - 1] + t[i][j - 1] + t[i + 1][j - 1] + t[i - 1][j] + t[i + 1][j] + t[i - 1][j + 1] + t[i][j + 1] + t[i + 1][j + 1];
+                if (sum < 4 && sum > 1)
+                    t2[i][j] = true;
+                else
+                    t2[i][j] = false;
+            }
         }
     }
+    
+    for (int i = 0; i < x; i++)
+    {
+        for (int j = 0; j < y; j++)
+        {
+            t[i][j] = t2[i][j];
+
+        }
+
+    }
 }
-*/
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
