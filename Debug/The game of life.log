@@ -1,3 +1,4 @@
 ﻿  The game of life.cpp
-C:\Users\Laptop\source\repos\The game of life\The game of life.cpp(23,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Laptop\source\repos\The game of life\The game of life.cpp(18,10): warning C4101: 'decide': unreferenced local variable
+C:\Users\Laptop\source\repos\The game of life\The game of life.cpp(30,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
   The game of life.vcxproj -> C:\Users\Laptop\source\repos\The game of life\Debug\The game of life.exe
