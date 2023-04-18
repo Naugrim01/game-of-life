@@ -80,7 +80,9 @@ void life_step(bool t[30][90], int x, int y)
             {
                 sum = 0;
                 sum = t[i - 1][j - 1] + t[i][j - 1] + t[i + 1][j - 1] + t[i - 1][j] + t[i + 1][j] + t[i - 1][j + 1] + t[i][j + 1] + t[i + 1][j + 1];
-                if (sum < 4 && sum > 1)
+                if (sum == 3)
+                    t2[i][j] = true;
+                else if (sum == 2 && t[i][j])
                     t2[i][j] = true;
                 else
                     t2[i][j] = false;
