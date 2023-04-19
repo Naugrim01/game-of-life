@@ -40,7 +40,7 @@ void fill_array(bool t[30][90], int x, int y, int a)
     {
         for (int j = 0; j < y; j++) 
         {
-            if ((rand() % 100) <= a)
+            if ((rand() % 100) < a)
                 t[i][j] = true;
             else
                 t[i][j] = false;
@@ -67,39 +67,6 @@ void show_array(bool t[30][90], int x, int y)
     }
     
 }
-/*
-void life_step(bool t[30][90], int x, int y)
-{
-    bool t2[30][90];
-    int sum;
-    for (int i = 0; i < x; i++)
-    {
-        for (int j = 0; j < y; j++)
-        {
-            if (i != 0 && i != x - 1 && j != 0 && j != y - 1)
-            {
-                sum = 0;
-                sum = t[i - 1][j - 1] + t[i][j - 1] + t[i + 1][j - 1] + t[i - 1][j] + t[i + 1][j] + t[i - 1][j + 1] + t[i][j + 1] + t[i + 1][j + 1];
-                if (sum == 3)
-                    t2[i][j] = true;
-                else if (sum == 2)
-                    t2[i][j] = t[i][j];
-                else
-                    t2[i][j] = false;
-            }
-        }
-    }
-    
-    for (int i = 0; i < x; i++)
-    {
-        for (int j = 0; j < y; j++)
-        {
-            t[i][j] = t2[i][j];
-
-        }
-
-    }
-} */
 
 void life_step(bool t[30][90], int x, int y)
 {
@@ -109,8 +76,6 @@ void life_step(bool t[30][90], int x, int y)
     {
         for (int j = 0; j < y; j++)
         {
-            if (i != 0 && i != x - 1 && j != 0 && j != y - 1)
-            {
                 sum = 0;
                 for (int s = (i - 1); s < i + 2; s++)
                 {
@@ -119,7 +84,7 @@ void life_step(bool t[30][90], int x, int y)
                         if((s == i) && (u == j))
                             continue;
                         else
-                            sum += t[s][u];
+                            sum += t[(x+s)%x][(y+u)%y]; //modulo is allow to not read memory except array area
                     }
                 }
 
@@ -130,7 +95,6 @@ void life_step(bool t[30][90], int x, int y)
                     t2[i][j] = t[i][j];
                 else
                     t2[i][j] = false;
-            }
         }
     }
 
