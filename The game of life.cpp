@@ -27,8 +27,8 @@ int main()
     {
         life_step(field, 30, 90);
         show_array(field, 30, 90);
-       // system("pause");
+        //system("pause");
+        //Sleep(10);
         system("cls");
     }
 }
-
