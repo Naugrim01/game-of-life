@@ -1,21 +1,18 @@
 #include <SFML/Graphics.hpp>
+#include "game_of_life_functions.h"
 
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(1280, 720), "SFML game of life");
-
+    window.setFramerateLimit(10);
     int w = 10;
     //int grid[128][72];
-    int sgrid[128][72];
+    bool sgrid[128][72];
 
     sf::Texture t;
     t.loadFromFile("images/life.jpg");
     sf::Sprite s(t);
-    for (int i =0;i<128;i++)
-        for (int j = 0; j < 72; j++)
-        {
-            sgrid[i][j] = 0;
-        }
+    fill_array(sgrid,128, 72, 50);
 
     while (window.isOpen())
     {
@@ -26,6 +23,8 @@ int main()
             if (event.type == sf::Event::Closed)
                 window.close();
         }
+
+
             for (int i = 0; i < 128; i++)
                 for (int j = 0; j < 72; j++)
                 {
@@ -33,7 +32,7 @@ int main()
                     s.setPosition(i * w, j * w);
                     window.draw(s);
                 }
-        
+            life_step(sgrid, 128, 72);
         window.display();
     }
 

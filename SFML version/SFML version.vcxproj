@@ -151,7 +151,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="game_of_life_functions.cpp" />
     <ClCompile Include="SFML version.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="game_of_life_functions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,8 +1,8 @@
 ﻿  SFML version.cpp
-C:\Users\Laptop\source\repos\The game of life\SFML version\SFML version.cpp(33,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\Laptop\source\repos\The game of life\SFML version\SFML version.cpp(33,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Laptop\source\repos\The game of life\SFML version\SFML version.cpp(32,44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\Laptop\source\repos\The game of life\SFML version\SFML version.cpp(32,37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   Generating code
-  1 of 72 functions ( 1.4%) were compiled, the rest were copied from previous compilation.
+  2 of 75 functions ( 2.7%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
