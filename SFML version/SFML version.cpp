@@ -12,7 +12,7 @@ int main()
     sf::Texture t;
     t.loadFromFile("images/life.jpg");
     sf::Sprite s(t);
-    fill_array(sgrid,128, 72, 50);
+    fill_array(sgrid,128, 72, 25);
 
     while (window.isOpen())
     {
