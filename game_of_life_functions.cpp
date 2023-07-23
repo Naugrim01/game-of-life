@@ -96,3 +96,38 @@ void life_step(bool t[30][90], int x, int y)
 
     }
 }
+
+void game_of_life()
+{
+    bool field[30][90];
+    int a = 5;
+    int steps;
+
+    do
+    {
+        std::cout << "how much life? 0-100%\n";
+        std::cin >> a;
+        system("cls");
+    } while ((a < 0 || a > 100) || !isRight());
+
+    do
+    {
+        std::cout << "how much steps? 0-2000\n";
+        std::cin >> steps;
+        system("cls");
+    } while ((steps < 0 || steps > 2000) || !isRight());
+
+    fill_array(field, 30, 90, a);
+    show_array(field, 30, 90);
+    system("pause");
+    system("cls");
+
+    for (int i = 0; i < steps; i++)
+    {
+        system("cls");
+        life_step(field, 30, 90);
+        show_array(field, 30, 90);
+        //system("pause");
+        //Sleep(10);
+    }
+}
